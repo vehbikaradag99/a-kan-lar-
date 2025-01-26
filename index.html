@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizim Hikayemiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5d3a0;
+            color: #333;
+        }
+
+        header {
+            background-color: #e4ac3a;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .photo-gallery {
+            display: block;
+            text-align: center;
+        }
+
+        .photo-gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .video-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-section video {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        #login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5d3a0;
+        }
+
+        #login-container input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #login-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #e4ac3a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login-container button:hover {
+            background-color: #d4932f;
+        }
+
+        #content {
+            display: none;
+        }
+    </style>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'serap' && password === 'altundag') {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Kullanıcı adı veya şifre yanlış!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Giriş Yap</h2>
+        <input type="text" id="username" placeholder="Kullanıcı Adı">
+        <input type="password" id="password" placeholder="Şifre">
+        <button onclick="login()">Giriş Yap</button>
+    </div>
+
+    <div id="content">
+        <header>
+            <h1>Bizim Hikayemiz</h1>
+        </header>
+
+        <main>
+            <section class="photo-gallery">
+                <h2>Fotoğraflarımız</h2>
+                <img src="./fotoğraflar/foto1.jpg" width="300px" alt="">
+                <br>
+                <img src="./fotoğraflar/foto2.jpg" width="300px" alt="">
+                <br>
+                <img src="./fotoğraflar/foto3.jpg" width="300px" alt="">
+            </section>
+
+            <section class="video-section">
+                <h2>Videomuz</h2>
+                <video controls>
+                    <source src="./videolar/video.mp4" type="video/mp4">
+                    Tarayıcınız bu videoyu desteklemiyor.
+                </video>
+            </section>
+        </main>
+
+        <footer>
+            <p>❤️ Seni Seviyorum ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>
